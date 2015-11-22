@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<locations>
+  <location>
+    <name>Київ</name>
+    <references>Київська обл.</references>
+    <location_type>м.</location_type>
+    <adm_type>столиця, обл., DISTRICT</adm_type>
+  </location>
+  <location>
+    <name>Черкаси</name>
+    <references>Черкаська обл.</references>
+    <location_type>м.</location_type>
+    <adm_type>обл., DISTRICT</adm_type>
+  </location>
+  <location>
+    <name>Львів</name>
+    <references>Львівська обл.</references>
+    <location_type>м.</location_type>
+    <adm_type>обл., DISTRICT</adm_type>
+  </location>
+  <location>
+    <name>Маньківка</name>
+    <references>Маньківський р-н</references>
+    <location_type>смт.</location_type>
+    <adm_type>DISTRICT</adm_type>
+  </location>
+  <location>
+    <name>Жашків</name>
+    <references>Жашківський р-н</references>
+    <location_type>м.</location_type>
+    <adm_type>DISTRICT</adm_type>
+  </location>
+  <location>
+    <name>Нестерівка</name>
+    <references>Маньківський р-н</references>
+    <location_type>с.</location_type>
+  </location>
+</locations>

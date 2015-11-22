@@ -1,0 +1,119 @@
+@(joinForm: Form[_], addrLocations: java.util.Map[String, String])
+
+@import helper._
+@import mk.ck.energy.csm.controllers._
+@import mk.ck.energy.csm.model.AddressTop
+@import mk.ck.energy.csm.model.AddressPlace
+
+@main(Messages("playauthenticate.profile.join_consumer.electricity"), "joinConsumer") {
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h3 class="panel-title">@Messages("playauthenticate.profile.join_consumer.electricity")</h3>
+    </div>
+    <div class="panel-body">
+      
+      @helper.form(routes.Account.doJoinConsumerElectricity, 'class -> "form") {
+        @if(joinForm.hasGlobalErrors) {
+          <div class="alert alert-danger">@joinForm.globalError.message</div>
+        }
+        <div class="text-center"><h3><font color="blue">@Messages("page.profile.consumer.description")</font></h3></div><br/>
+        
+        <div class="row">
+          <div class="col-md-2 col-sm-2">
+            @inputText(
+              joinForm("id"),
+              '_label -> Messages("page.profile.consumer.id"),
+              'size -> 10,
+              'class -> "form-control"
+            )
+          </div>
+          
+          <div class="col-md-7 col-sm-7">
+            @inputText(
+              joinForm("fullName"),
+              '_label -> Messages("page.profile.consumer.fullname"),
+              'size -> 35,
+              'class -> "form-control"
+            )
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-4 col-sm-4">
+            <label>@Messages("page.profile.consumer.addressTop")</label><br/>
+            @defining(AddressTop.getMap("0")) { map =>
+              @if(map != null) {
+                <select style="width: 100%" id="topAddress" name="topAddress" >
+                  <option value="0" selected>@Messages("page.profile.consumer.addressTop.select")</option>
+                  @for((key,value) <- map) {
+                    <option value="@key">@value</option>
+                  }
+                </select>
+              }
+            }
+          </div>
+          
+          <div class="col-md-4 col-sm-4">
+            <label>@Messages("page.profile.consumer.addressLocation")</label><br/>
+            <select style="width: 100%" id="locationAddress" name="locationAddress">
+              
+            </select>
+          </div>
+        </div><br/>
+        
+        <div class="row">
+          <div class="col-md-4 col-sm-4">
+            <label>@Messages("page.profile.consumer.addressPlace")</label>
+            @defining(AddressPlace.getMap()) { map =>
+              @if(map != null) {
+                <select style="width: 100%" id="placeAddress" name="placeAddress" >
+                  <option value="0" selected>@Messages("page.profile.consumer.addressPlace.select")</option>
+                  @for((key,value) <- map) {
+                    <option value="@key">@value</option>
+                  }
+                </select>
+              }
+            }
+          </div>
+          
+          <div class="col-md-2 col-sm-2">
+             @inputText(
+              joinForm("house"),
+              '_label -> Messages("page.profile.consumer.addressHouse"),
+              'size -> 4,
+              'class -> "form-control"
+            )
+          </div>
+          
+          <div class="col-md-2 col-sm-2">
+             @inputText(
+              joinForm("apartment"),
+              '_label -> Messages("page.profile.consumer.addressApartment"),
+              'size -> 4,
+              'class -> "form-control"
+            )
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-4 col-sm-4">
+            <input type="submit" value='@Messages("page.profile.consumer.join")' class="btn btn-default">
+          </div>
+          <div class="col-md-4 col-sm-4">
+            @inputText(
+              joinForm("userId"),
+              '_label -> Messages("page.profile.user.id"),
+              'readonly -> "readonly", 
+              'class -> "form-control"
+            )
+          </div>
+        </div>
+      }
+    </div>
+    
+  </div>
+  
+  <script src='@controllers.routes.Assets.versioned("js/join-consumer.js")'></script>
+}
+      
