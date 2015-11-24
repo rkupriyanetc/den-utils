@@ -2,14 +2,14 @@ name := "den-utils"
 
 version := "1.0-SNAPSHOT"
 
-scalaVersion := "2.11.6"
+scalaVersion := "2.11.7"
 
 libraryDependencies ++= Seq(
   javaCore,
   cache,
   javaWs,
   "be.objectify"              %% "deadbolt-java"       % "2.4.3",
-  "com.feth"                  %% "play-authenticate"   % "0.7.0",
+  "com.feth"                  %% "play-authenticate"   % "0.7.1-SNAPSHOT",
   "org.mongodb"               %  "mongo-java-driver"   % "3.0.4",
   "org.apache.poi"            %  "poi"                 % "3.12",
   "org.apache.poi"            %  "poi-ooxml"           % "3.12",
@@ -23,7 +23,7 @@ resolvers ++= Seq(
   Resolver.sonatypeRepo("snapshots")
 )
 
-javacOptions ++= Seq("-source", "1.8", "-target", "1.8")
+//javacOptions ++= Seq("-source", "1.8", "-target", "1.8")
 
 // Play provides two styles of routers, one expects its actions to be injected, the
 // other, legacy style, accesses its actions statically.
