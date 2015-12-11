@@ -5,6 +5,7 @@ tmp
 dist
 out
 bin
+logs
 target
 project/project
 project/target
