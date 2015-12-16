@@ -1,3 +1,5 @@
+
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static play.test.Helpers.contentAsString;
@@ -13,13 +15,13 @@ import play.twirl.api.Content;
  * details.
  */
 public class ApplicationTest {
-	
+
 	@Test
 	public void simpleCheck() {
 		final int a = 1 + 1;
 		assertEquals( 2, a );
 	}
-	
+
 	@Test
 	public void renderTemplate() {
 		final Content html = views.html.index.render( "Your new application is ready." );

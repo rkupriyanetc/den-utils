@@ -8,7 +8,7 @@ libraryDependencies ++= Seq(
   javaJdbc,
   cache,
   javaWs,
-  "be.objectify"              %% "deadbolt-java"       % "2.4.3",
+  "net.sourceforge.jtds"      %  "jtds"                % "1.3.1",
   "org.mongodb"               %  "mongo-java-driver"   % "3.0.4",
   "org.apache.poi"            %  "poi"                 % "3.12",
   "org.apache.poi"            %  "poi-ooxml"           % "3.12",
@@ -20,7 +20,7 @@ libraryDependencies ++= Seq(
 // Play provides two styles of routers, one expects its actions to be injected, the
 // other, legacy style, accesses its actions statically.
 
-routesGenerator := InjectedRoutesGenerator
+// routesGenerator := InjectedRoutesGenerator
 
 // add resolver for deadbolt and easymail snapshots
 resolvers ++= Seq( 

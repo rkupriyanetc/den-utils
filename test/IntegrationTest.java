@@ -1,3 +1,5 @@
+
+
 import static org.junit.Assert.assertTrue;
 import static play.test.Helpers.HTMLUNIT;
 import static play.test.Helpers.fakeApplication;
@@ -11,7 +13,7 @@ import play.libs.F.Callback;
 import play.test.TestBrowser;
 
 public class IntegrationTest {
-	
+
 	/**
 	 * add your integration test here
 	 * in this example we just check if the welcome page is being shown

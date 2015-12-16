@@ -1,4 +1,4 @@
-package db;
+package mk.ck.energy.csm.model;
 
 /**
  * @author RVK
