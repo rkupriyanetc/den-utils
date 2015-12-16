@@ -1,0 +1,39 @@
+@( nav: String = "" )
+
+<div class="navbar navbar-fixed-top navbar-default" role="navigation">
+      <div class="container">
+      
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#main-menu">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="@mk.ck.energy.csm.controllers.routes.Application.index()">@Messages("page.home.title")</a>
+        </div>
+        
+        <div class="collapse navbar-collapse" id="main-menu">
+          <ul id="mainTab" class="nav nav-tabs navbar-nav">
+            <li class='@("active".when(nav==""))'><a href="@mk.ck.energy.csm.controllers.routes.Application.index()"><span class="glyphicon glyphicon-home"></span> @Messages("main.menu.home.title")</a></li>
+            <li class='@("active".when(nav=="about"))'><a href="@mk.ck.energy.csm.controllers.routes.Application.about()"><span class="glyphicon glyphicon-question-sign"></span> @Messages("main.menu.about.title")</a></li>
+            <li class='@("active".when(nav=="feedback"))'><a href="@mk.ck.energy.csm.controllers.routes.Application.feedback()"><span class="glyphicon glyphicon-pencil"></span> @Messages("main.menu.feedback.title")</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-list"></span>@Messages("main.menu.oper.title")<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">@Messages("main.menu.oper.scripts.title")</a></li>
+                <li><a href="#">Submenu 2</a></li>
+                <li><a href="#">Submenu 3</a></li>
+                <li><a href="#">Submenu 4</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Submenu 5</a></li>
+                <li><a href="#">Submenu 6</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Submenu 7</a></li>
+              </ul>
+            </li>
+          </ul>
+          
+        </div><!-- /.collapse navbar-collapse -->
+      </div><!-- /.container -->
+    </div><!-- /.navbar navbar-fixed-top -->

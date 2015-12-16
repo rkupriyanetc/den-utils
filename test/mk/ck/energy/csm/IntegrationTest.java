@@ -1,3 +1,4 @@
+package mk.ck.energy.csm;
 
 
 import static org.junit.Assert.assertTrue;
