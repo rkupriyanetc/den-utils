@@ -6,6 +6,10 @@ import java.util.Date;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import be.objectify.deadbolt.java.actions.Group;
+import be.objectify.deadbolt.java.actions.Restrict;
+import be.objectify.deadbolt.java.actions.SubjectPresent;
+import mk.ck.energy.csm.model.auth.UserRole;
 import mk.ck.energy.csm.providers.UsernamePasswordAuthProvider;
 import mk.ck.energy.csm.providers.UsernamePasswordAuthProvider.UsernamePassword;
 import play.data.Form;
@@ -28,6 +32,7 @@ public class Application extends Controller {
 																								
 	public static final String	FLASH_ERROR_KEY		= "error";
 
+	@SubjectPresent
 	public static Result index() {
 		return ok( index.render() );
 	}
@@ -35,7 +40,8 @@ public class Application extends Controller {
 	public static Result about() {
 		return ok( about.render() );
 	}
-
+	
+	@Restrict( { @Group( UserRole.INSP_ROLE_NAME ), @Group( UserRole.OPERP_ROLE_NAME ), @Group( UserRole.OPERU_ROLE_NAME ) })
 	public static Result feedback() {
 		return ok( feedback.render() );
 	}
@@ -60,7 +66,8 @@ public class Application extends Controller {
 			return badRequest( login.render( filledForm ) );
 		else
 			// Everything was filled
-			return Controller.ok( index.render() );//UsernamePasswordAuthProvider.handleLogin( ctx() );
+			return Controller.ok( index.render() );// UsernamePasswordAuthProvider.handleLogin(
+																							// ctx() );
 	}
 	
 	public static void noCache( final Response response ) {

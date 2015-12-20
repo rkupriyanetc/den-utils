@@ -8,6 +8,7 @@ libraryDependencies ++= Seq(
   javaJdbc,
   cache,
   javaWs,
+  "be.objectify"              %% "deadbolt-java"       % "2.4.3",
   "org.mindrot"               %  "jbcrypt"             % "0.3m",
   "net.sourceforge.jtds"      %  "jtds"                % "1.3.1",
   "org.mongodb"               %  "mongo-java-driver"   % "3.0.4",

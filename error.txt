@@ -1,0 +1,24 @@
+play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[ConfigurationException: Guice configuration errors:
+
+1) No implementation for be.objectify.deadbolt.java.cache.HandlerCache was bound.
+  while locating be.objectify.deadbolt.java.cache.HandlerCache
+    for parameter 2 at be.objectify.deadbolt.java.actions.SubjectPresentAction.<init>(SubjectPresentAction.java:42)
+  while locating be.objectify.deadbolt.java.actions.SubjectPresentAction
+
+2) No implementation for be.objectify.deadbolt.java.cache.SubjectCache was bound.
+  while locating be.objectify.deadbolt.java.cache.SubjectCache
+    for parameter 1 at be.objectify.deadbolt.java.actions.SubjectPresentAction.<init>(SubjectPresentAction.java:42)
+  while locating be.objectify.deadbolt.java.actions.SubjectPresentAction
+
+2 errors]]
+        at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:265) ~[play_2.11-2.4.6.jar:2.4.6]
+        at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:191) ~[play_2.11-2.4.6.jar:2.4.6]
+        at play.api.GlobalSettings$class.onError(GlobalSettings.scala:179) [play_2.11-2.4.6.jar:2.4.6]
+        at play.api.DefaultGlobal$.onError(GlobalSettings.scala:212) [play_2.11-2.4.6.jar:2.4.6]
+        at play.api.http.GlobalSettingsHttpErrorHandler.onServerError(HttpErrorHandler.scala:94) [play_2.11-2.4.6.jar:2.4.6]
+        at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$9$$anonfun$apply$1.applyOrElse(PlayDefaultUpstreamHandler.scala:151) [play-netty-server_2.11-2.4.6.jar:2.4.6]
+        at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$9$$anonfun$apply$1.applyOrElse(PlayDefaultUpstreamHandler.scala:148) [play-netty-server_2.11-2.4.6.jar:2.4.6]
+        at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:36) [scala-library-2.11.7.jar:na]
+        at scala.util.Failure$$anonfun$recover$1.apply(Try.scala:216) [scala-library-2.11.7.jar:na]
+        at scala.util.Try$.apply(Try.scala:192) [scala-library-2.11.7.jar:na]
+Caused by: com.google.inject.ConfigurationException: Guice configuration errors:
