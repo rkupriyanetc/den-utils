@@ -8,6 +8,8 @@ GET     /about                      	   mk.ck.energy.csm.controllers.Application
 GET     /feedback                      	   mk.ck.energy.csm.controllers.Application.feedback()
 GET     /officialHome                	   mk.ck.energy.csm.controllers.Application.officialHome()
 GET     /rates                 		       mk.ck.energy.csm.controllers.Application.rates()
+GET     /login                             mk.ck.energy.csm.controllers.Application.login()
+POST    /login                             mk.ck.energy.csm.controllers.Application.doLogin()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

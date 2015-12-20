@@ -1,0 +1,38 @@
+@(loginForm: Form[_])
+
+@import helper._
+@import mk.ck.energy.csm.controllers._
+@main(Messages("playauthenticate.login.title"),"login") {
+  
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h3 class="panel-title">@Messages("page.registered.title")</h3>
+    </div>
+    <div class="panel-body">
+      
+      <div class="row">
+      
+        <div class="col-md-6">
+          @helper.form(routes.Application.doLogin, 'class -> "form-horizontal", 'role -> "form") {
+          
+            @if(loginForm.hasGlobalErrors) {
+              <div class="alert alert-danger">@loginForm.globalError.message</div>
+            }
+            
+            @_usernamePartial(loginForm)
+            
+            @inputPassword(
+              loginForm("password"),
+              '_showConstraints -> false,
+              '_label -> Messages("playauthenticate.login.password.placeholder"),
+              'class -> "form-control"
+            )
+            <input type="submit" value='@Messages("playauthenticate.login.now")' class="btn btn-info" />
+          }
+        </div>
+
+      </div>
+    </div>
+    
+  </div>
+}
